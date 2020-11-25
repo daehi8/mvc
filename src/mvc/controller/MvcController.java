@@ -15,11 +15,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import mvc.model.SuperAction;
+
 public class MvcController extends HttpServlet {
 	
 	// 사용자가 접속하면 객체를 모두 자동생성
 	private Map action = new HashMap();	
 	public void init(ServletConfig config) {
+		System.out.println("init start");
 		// web.xml에서 설정한 init parameter 값을 받음
 		String uri = config.getInitParameter("action");
 		// java.util.Properties Class - properties file 로딩 
@@ -44,9 +47,24 @@ public class MvcController extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-	
+	// SuperAction interface에 추상메소드를 만든 후
+	// Action Class에서 상속
+	// 접속한 URI를  key로 obj class에 대입 (key에 맞는 value 찾기)
+	// init에서 value를 이름으로 한  Class를 객체 생성한 후 obj로 만들었었다.
+	// interface 다형성 -> SuperAction의 method가 실행되지만 obj에 따라 바뀐다.
+	// Action Class의 return 값을  view에 저장 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println(action);
+		System.out.println("service start");
+		String key = request.getRequestURI();
+		String view = "";
+		if(key != null) {
+			Object obj = action.get(key);
+			if(obj!= null) {
+				SuperAction sa = (SuperAction)obj;
+				view = sa.requestAction(request, response);
+			}
+		}
+		request.getRequestDispatcher(view).forward(request, response);
 		/*
 		System.out.println("controller start");
 		// 사용자 요청 주소(URI)

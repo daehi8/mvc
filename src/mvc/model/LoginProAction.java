@@ -1,5 +1,13 @@
 package mvc.model;
 
-public class LoginProAction {
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
+public class LoginProAction implements SuperAction {
+	
+	@Override
+	public String requestAction(HttpServletRequest request, HttpServletResponse response) {
+		System.out.println("ProAction Start");
+		return "/member/loginpro.jsp";
+	}
 }
