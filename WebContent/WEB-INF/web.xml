@@ -5,12 +5,19 @@
 	<servlet>
 		<servlet-name>mvc</servlet-name>
 		<servlet-class>mvc.controller.MvcController</servlet-class>
+		
+		<!-- 
+		properties file은 요청이 들어왔을 때 실행해야 할 액션 클래스를 정해놓은 파일
+		uri와 action class는 1:1로 설정 - 쉬운 유지보수
+		init method 에 parameter를 전송 
+		-->
+		
+		<init-param>
+			<param-name>action</param-name>
+			<param-value>C:\Users\82107\Desktop\WORK\JAVA\mvc\WebContent\WEB-INF\urimapping.properties</param-value>
+		</init-param>
 	</servlet>
 	
-	<servlet>
-		<servlet-name>test</servlet-name>
-		<servlet-class>mvc.controller.TestController</servlet-class>
-	</servlet>
 	<!-- 
 	주소의 끝자리가 .do일 경우 servlet-name에 맞는 servlet 호출
 	-->
@@ -19,8 +26,4 @@
 		<url-pattern>*.do</url-pattern> 
 	</servlet-mapping>
 	
-	<servlet-mapping>
-		<servlet-name>test</servlet-name>
-		<url-pattern>*.nhn</url-pattern> 
-	</servlet-mapping>
 </web-app>
