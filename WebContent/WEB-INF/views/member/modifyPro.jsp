@@ -4,7 +4,7 @@
 <%@ taglib prefix="fmt" uri ="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ include file="/resource/etc/color.jsp"%>
 
-<% request.setCharacterEncoding("UTF-8");%>
+<fmt:requestEncoding value="UTF-8"/>
 
 <jsp:useBean id="member" class="ch11.logon.LogonDataBean">
     <jsp:setProperty name="member" property="*" />

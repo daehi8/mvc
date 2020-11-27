@@ -7,7 +7,7 @@
 <head><title>ID 중복확인</title>
 <link href="/resource/style/style.css" rel="stylesheet" type="text/css">
 
-<% request.setCharacterEncoding("UTF-8");%>
+<fmt:requestEncoding value="UTF-8"/>
 
 <%
     String id = request.getParameter("id");
