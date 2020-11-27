@@ -9,21 +9,11 @@
 
 <fmt:requestEncoding value="UTF-8"/>
 
-<%
-    String id = request.getParameter("id");
-	LogonDBBean manager = LogonDBBean.getInstance();
-    int check= manager.confirmId(id);
- %>
-
-
-
 <body bgcolor="${bodyback_c}">
-<%
-    if(check == 1) {
-%>
+<c:if test="${check==1}">
 <table width="270" border="0" cellspacing="0" cellpadding="5">
   <tr bgcolor="${title_c}"> 
-    <td height="39" ><%=id%>이미 사용중인 아이디입니다.</td>
+    <td height="39" >${id}이미 사용중인 아이디입니다.</td>
   </tr>
 </table>
 <form name="checkForm" method="post" action="/mvc/member/confirmId.do">
@@ -37,28 +27,23 @@
   </tr>
 </table>
 </form>
-<%
-    } else {
-%>
+</c:if>
+<c:if test="${check == -1}">
 <table width="270" border="0" cellspacing="0" cellpadding="5">
   <tr bgcolor="${title_c}"> 
     <td align="center"> 
-      <p>입력하신 <%=id%> 는 사용하실 수 있는 ID입니다. </p>
+      <p>입력하신 ${id} 는 사용하실 수 있는 ID입니다. </p>
       <input type="button" value="닫기" onclick="setid()">
     </td>
   </tr>
 </table>
-<%
-    }
-%>
+</c:if>
 </body>
 </html>
-<script language="javascript">
-<!--
+<script>
   function setid()
     {		
-    	opener.document.userinput.id.value="<%=id%>";
+    	opener.document.userinput.id.value="${id}";
 		self.close();
-		}
-		-->
+	}
 </script>
