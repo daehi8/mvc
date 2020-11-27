@@ -15,7 +15,7 @@
     private Connection getConnection() throws Exception {
       Context initCtx = new InitialContext();
       Context envCtx = (Context) initCtx.lookup("java:comp/env");
-      DataSource ds = (DataSource)envCtx.lookup("jdbc/jsptest");
+      DataSource ds = (DataSource)envCtx.lookup("jdbc/orcl");
       return ds.getConnection();
     }
  
@@ -65,11 +65,11 @@
 			if(rs.next()){
 				dbpasswd= rs.getString("passwd"); 
 				if(dbpasswd.equals(passwd))
-					x= 1; //ÀÎÁõ ¼º°ø
+					x= 1; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 				else
-					x= 0; //ºñ¹Ð¹øÈ£ Æ²¸²
+					x= 0; //ï¿½ï¿½Ð¹ï¿½È£ Æ²ï¿½ï¿½
 			}else
-				x= -1;//ÇØ´ç ¾ÆÀÌµð ¾øÀ½
+				x= -1;//ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½
 			
         } catch(Exception ex) {
             ex.printStackTrace();
@@ -98,9 +98,9 @@
             rs= pstmt.executeQuery();
 
 			if(rs.next())
-				x= 1; //ÇØ´ç ¾ÆÀÌµð ÀÖÀ½
+				x= 1; //ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½
 			else
-				x= -1;//ÇØ´ç ¾ÆÀÌµð ¾øÀ½		
+				x= -1;//ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½		
         } catch(Exception ex) {
             ex.printStackTrace();
         } finally {
@@ -195,9 +195,9 @@
             	      "delete from MEMBER where id=?");
                     pstmt.setString(1, id);
                     pstmt.executeUpdate();
-					x= 1; //È¸¿øÅ»Åð ¼º°ø
+					x= 1; //È¸ï¿½ï¿½Å»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 				}else
-					x= 0; //ºñ¹Ð¹øÈ£ Æ²¸²
+					x= 0; //ï¿½ï¿½Ð¹ï¿½È£ Æ²ï¿½ï¿½
 			}
         } catch(Exception ex) {
             ex.printStackTrace();

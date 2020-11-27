@@ -1,10 +1,12 @@
-<%@ page contentType="text/html;charset=euc-kr" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page import = "ch11.logon.LogonDBBean" %>
+<%@ taglib prefix="c" uri ="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri ="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ include file="/resource/etc/color.jsp"%>
 <html>
 <head>
-<title>È¸¿øÅ»Åð</title>
-<link href="style.css" rel="stylesheet" type="text/css">
+<title>íšŒì›íƒˆí‡´</title>
+<link href="/resource/style/style.css" rel="stylesheet" type="text/css">
 </head>
 
 <%
@@ -17,29 +19,29 @@
 	if(check==1){
 		session.invalidate();
 %>
-<body bgcolor="<%=bodyback_c%>">
-<form method="post" action="main.jsp" name="userinput" >
+<body bgcolor="${bodyback_c}">
+<form method="post" action="/mvc/member/main.do" name="userinput" >
 <table width="270" border="0" cellspacing="0" cellpadding="5" align="center">
-  <tr bgcolor="<%=title_c%>"> 
+  <tr bgcolor="${title_c}"> 
     <td height="39" align="center">
-	  <font size="+1" ><b>È¸¿øÁ¤º¸°¡ »èÁ¦µÇ¾ú½À´Ï´Ù.</b></font></td>
+	  <font size="+1" ><b>íšŒì›ì •ë³´ê°€ ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.</b></font></td>
   </tr>
-  <tr bgcolor="<%=value_c%>">
+  <tr bgcolor="${value_c}">
     <td align="center"> 
-      <p>ÈæÈæ.... ¼­¿îÇÕ´Ï´Ù. ¾È³çÈ÷ °¡¼¼¿ä.</p>
-      <meta http-equiv="Refresh" content="5;url=main.jsp" >
+      <p>í‘í‘.... ì„œìš´í•©ë‹ˆë‹¤. ì•ˆë…•ížˆ ê°€ì„¸ìš”.</p>
+      <meta http-equiv="Refresh" content="5;url=/mvc/member/main.do" >
     </td>
   </tr>
-  <tr bgcolor="<%=value_c%>">
+  <tr bgcolor="${value_c}">
     <td align="center"> 
-      <input type="submit" value="È®ÀÎ">
+      <input type="submit" value="í™•ì¸">
     </td>
   </tr>
 </table>
 </form>
 <%}else {%>
 	<script> 
-	  alert("ºñ¹Ð¹øÈ£°¡ ¸ÂÁö ¾Ê½À´Ï´Ù.");
+	  alert("ë¹„ë°€ë²ˆí˜¸ê°€ ë§žì§€ ì•ŠìŠµë‹ˆë‹¤.");
       history.go(-1);
 	</script>
 <%}%>

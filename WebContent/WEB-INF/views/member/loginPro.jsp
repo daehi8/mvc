@@ -1,7 +1,7 @@
-<%@ page contentType="text/html;charset=euc-kr" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page import = "ch11.logon.LogonDBBean" %>
 
-<% request.setCharacterEncoding("euc-kr");%>
+<% request.setCharacterEncoding("UTF-8");%>
 
 <%
     String id = request.getParameter("id");
@@ -12,15 +12,15 @@
 
 	if(check==1){
 		session.setAttribute("memId",id);
-		response.sendRedirect("main.jsp");
+		response.sendRedirect("/mvc/member/main.do");
 	}else if(check==0){%>
 	<script> 
-	  alert("��й�ȣ�� ���� �ʽ��ϴ�.");
+	  alert("비밀번호가 맞지 않습니다.");
       history.go(-1);
 	</script>
 <%	}else{ %>
 	<script>
-	  alert("���̵� ���� �ʽ��ϴ�..");
+	  alert("아이디가 맞지 않습니다..");
 	  history.go(-1);
 	</script>
 <%}	%>	

@@ -1,8 +1,10 @@
-<%@ page  contentType="text/html; charset=euc-kr"%>
+<%@ page  contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri ="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri ="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ include file="/resource/etc/color.jsp"%>
 <html>
-<head><title>╦чюнют╢о╢ы..</title>
-<link href="style.css" rel="stylesheet" type="text/css">
+<head><title>К╘■Л²╦Л·┘К▀┬К▀╓..</title>
+<link href="/resource/style/style.css" rel="stylesheet" type="text/css">
 </head>
 <%
  try{
@@ -18,12 +20,12 @@ function focusIt()
  {
    inputForm=eval("document.inform");
    if(!inputForm.id.value){
-     alert("╬фюл╣П╦╕ ют╥бго╪╪©Д..");
+     alert("Л∙└Л²╢К■■К╔╪ Л·┘К═╔М∙≤Л└╦Л ■..");
 	 inputForm.id.focus();
 	 return false;
    }
    if(!inputForm.passwd.value){
-     alert("╬фюл╣П╦╕ ют╥бго╪╪©Д..");
+     alert("Л∙└Л²╢К■■К╔╪ Л·┘К═╔М∙≤Л└╦Л ■..");
 	 inputForm.passwd.focus();
 	 return false;
    }
@@ -32,29 +34,29 @@ function focusIt()
 </script>
 </head>
 
-<body onLoad="focusIt();" bgcolor="<%=bodyback_c%>">
+<body onLoad="focusIt();" bgcolor="${bodyback_c}">
   <table width=500 cellpadding="0" cellspacing="0"  align="center" border="1" >
       <tr>
-       <td width="300" bgcolor="<%=bodyback_c%>" height="20">
+       <td width="300" bgcolor="${bodyback_c}" height="20">
        &nbsp;
        </td>
    
-       <form name="inform" method="post" action="loginPro.jsp"  onSubmit="return checkIt();">
+       <form name="inform" method="post" action="/mvc/member/loginPro.do"  onSubmit="return checkIt();">
 
-        <td bgcolor="<%=title_c%>"  width="100" align="right">╬фюл╣П</td>
-        <td width="100" bgcolor="<%=value_c%>">
+        <td bgcolor="${title_c}"  width="100" align="right">Л∙└Л²╢К■■</td>
+        <td width="100" bgcolor="${value_c}">
             <input type="text" name="id" size="15" maxlength="10"></td>
       </tr>
       <tr > 
-         <td rowspan="2" bgcolor="<%=bodyback_c%>" width="300" >╦чюнют╢о╢ы.</td>
-         <td bgcolor="<%=title_c%>"  width="100" align="right">фп╫╨©Ж╣Е</td>
-         <td width="100" bgcolor="<%=value_c%>">
+         <td rowspan="2" bgcolor="${bodyback_c}" width="300" >К╘■Л²╦Л·┘К▀┬К▀╓.</td>
+         <td bgcolor="${title_c}"  width="100" align="right">М▄╗Л┼╓Л⌡▄К⌠°</td>
+         <td width="100" bgcolor="${value_c}">
             <input type="password" name="passwd" size="15" maxlength="10"></td>
        </tr>
        <tr>
-          <td colspan="3" bgcolor="<%=title_c%>"   align="center">
-            <input type="submit" name="Submit" value="╥н╠вюн">
-            <input type="button"  value="х╦©Ь╟║ют" onclick="javascript:window.location='inputForm.jsp'">
+          <td colspan="3" bgcolor="${title_c}"   align="center">
+            <input type="submit" name="Submit" value="К║°Й╥╦Л²╦">
+            <input type="button"  value="М ▄Л⌡░Й╟─Л·┘" onclick="javascript:window.location='inputForm.jsp'">
           </td></form></tr></table>
           
           
@@ -65,19 +67,19 @@ function focusIt()
      <%}else{%>
        <table width=500 cellpadding="0" cellspacing="0"  align="center" border="1" >
          <tr>
-           <td width="300" bgcolor="<%=bodyback_c%>" height="20">гогого</td>
+           <td width="300" bgcolor="${bodyback_c}" height="20">М∙≤М∙≤М∙≤</td>
 
-           <td rowspan="3" bgcolor="<%=value_c%>" align="center">
-             <%=session.getAttribute("memId")%>╢тюл <br>
-             ╧Ф╧╝го╪л╫ю╢о╢ы
-             <form  method="post" action="logout.jsp">  
-             <input type="submit"  value="╥н╠в╬ф©Т">
-             <input type="button" value="х╦©Ьа╓╨╦╨╞╟Ф" onclick="javascript:window.location='modify.jsp'">
+           <td rowspan="3" bgcolor="${value_c}" align="center">
+             <%=session.getAttribute("memId")%>К▀≤Л²╢ <br>
+             К╟╘К╛╦М∙≤Л┘╗Л┼╣К▀┬К▀╓
+             <form  method="post" action="/mvc/member/logout.do">  
+             <input type="submit"  value="К║°Й╥╦Л∙└Л⌡┐">
+             <input type="button" value="М ▄Л⌡░Л═∙КЁ╢КЁ─Й╡╫" onclick="javascript:window.location='/mvc/member/modify.do'">
              </form>
          </td>
         </tr>
        <tr > 
-         <td rowspan="2" bgcolor="<%=bodyback_c%>" width="300" >╦чюнют╢о╢ы.</td>
+         <td rowspan="2" bgcolor="${bodyback_c}" width="300" >К╘■Л²╦Л·┘К▀┬К▀╓.</td>
       </tr>
      </table>
      <br>

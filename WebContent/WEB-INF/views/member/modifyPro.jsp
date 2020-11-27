@@ -1,8 +1,10 @@
-<%@ page contentType="text/html;charset=euc-kr" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page import = "ch11.logon.LogonDBBean" %>
+<%@ taglib prefix="c" uri ="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri ="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ include file="/resource/etc/color.jsp"%>
 
-<% request.setCharacterEncoding("euc-kr");%>
+<% request.setCharacterEncoding("UTF-8");%>
 
 <jsp:useBean id="member" class="ch11.logon.LogonDataBean">
     <jsp:setProperty name="member" property="*" />
@@ -18,21 +20,21 @@
 <link href="style.css" rel="stylesheet" type="text/css">
 
 <table width="270" border="0" cellspacing="0" cellpadding="5" align="center">
-  <tr bgcolor="<%=title_c%>"> 
+  <tr bgcolor="${title_c}"> 
     <td height="39"  align="center">
-	  <font size="+1" ><b>È¸¿øÁ¤º¸°¡ ¼öÁ¤µÇ¾ú½À´Ï´Ù.</b></font></td>
+	  <font size="+1" ><b>íšŒì›ì •ë³´ê°€ ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤.</b></font></td>
   </tr>
   <tr>
-    <td bgcolor="<%=value_c%>" align="center"> 
-      <p>ÀÔ·ÂÇÏ½Å ³»¿ë´ë·Î ¼öÁ¤ÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.</p>
+    <td bgcolor="${value_c}" align="center"> 
+      <p>ìž…ë ¥í•˜ì‹  ë‚´ìš©ëŒ€ë¡œ ìˆ˜ì •ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.</p>
     </td>
   </tr>
   <tr>
-    <td bgcolor="<%=value_c%>" align="center"> 
+    <td bgcolor="${value_c}" align="center"> 
       <form>
-	    <input type="button" value="¸ÞÀÎÀ¸·Î" onclick="window.location='main.jsp'">
+	    <input type="button" value="ë©”ì¸ìœ¼ë¡œ" onclick="window.location='/mvc/member/main.do'">
       </form>
-      5ÃÊÈÄ¿¡ ¸ÞÀÎÀ¸·Î ÀÌµ¿ÇÕ´Ï´Ù.<meta http-equiv="Refresh" content="5;url=main.jsp" >
+      5ì´ˆí›„ì— ë©”ì¸ìœ¼ë¡œ ì´ë™í•©ë‹ˆë‹¤.<meta http-equiv="Refresh" content="5;url=/mvc/member/main.do" >
     </td>
   </tr>
 </table>

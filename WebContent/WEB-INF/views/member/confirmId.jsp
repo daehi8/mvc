@@ -1,11 +1,13 @@
-<%@ page contentType="text/html;charset=euc-kr" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page import = "ch11.logon.LogonDBBean" %>
+<%@ taglib prefix="c" uri ="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri ="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ include file="/resource/etc/color.jsp"%>
 <html>
-<head><title>ID �ߺ�Ȯ��</title>
-<link href="style.css" rel="stylesheet" type="text/css">
+<head><title>ID 중복확인</title>
+<link href="/resource/style/style.css" rel="stylesheet" type="text/css">
 
-<% request.setCharacterEncoding("euc-kr");%>
+<% request.setCharacterEncoding("UTF-8");%>
 
 <%
     String id = request.getParameter("id");
@@ -15,22 +17,22 @@
 
 
 
-<body bgcolor="<%=bodyback_c%>">
+<body bgcolor="${bodyback_c}">
 <%
     if(check == 1) {
 %>
 <table width="270" border="0" cellspacing="0" cellpadding="5">
-  <tr bgcolor="<%=title_c%>"> 
-    <td height="39" ><%=id%>�̹� ������� ���̵��Դϴ�.</td>
+  <tr bgcolor="${title_c}"> 
+    <td height="39" ><%=id%>이미 사용중인 아이디입니다.</td>
   </tr>
 </table>
-<form name="checkForm" method="post" action="confirmId.jsp">
+<form name="checkForm" method="post" action="/mvc/member/confirmId.do">
 <table width="270" border="0" cellspacing="0" cellpadding="5">
   <tr>
-    <td bgcolor="<%=value_c%>" align="center"> 
-       �ٸ� ���̵� �����ϼ���.<p>
+    <td bgcolor="${value_c}" align="center"> 
+       다른 아이디를 선택하세요.<p>
        <input type="text" size="10" maxlength="12" name="id"> 
-       <input type="submit" value="ID�ߺ�Ȯ��">
+       <input type="submit" value="ID중복확인">
     </td>
   </tr>
 </table>
@@ -39,10 +41,10 @@
     } else {
 %>
 <table width="270" border="0" cellspacing="0" cellpadding="5">
-  <tr bgcolor="<%=title_c%>"> 
+  <tr bgcolor="${title_c}"> 
     <td align="center"> 
-      <p>�Է��Ͻ� <%=id%> �� ����Ͻ� �� �ִ� ID�Դϴ�. </p>
-      <input type="button" value="�ݱ�" onclick="setid()">
+      <p>입력하신 <%=id%> 는 사용하실 수 있는 ID입니다. </p>
+      <input type="button" value="닫기" onclick="setid()">
     </td>
   </tr>
 </table>

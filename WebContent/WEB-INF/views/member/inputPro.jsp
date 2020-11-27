@@ -1,8 +1,8 @@
-<%@ page contentType="text/html;charset=euc-kr" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page import = "ch11.logon.LogonDBBean" %>
 <%@ page import = "java.sql.Timestamp" %>
 
-<% request.setCharacterEncoding("euc-kr");%>
+<% request.setCharacterEncoding("UTF-8");%>
 
 <jsp:useBean id="member" class="ch11.logon.LogonDataBean">
     <jsp:setProperty name="member" property="*" />
@@ -13,5 +13,5 @@
     LogonDBBean manager = LogonDBBean.getInstance();
     manager.insertMember(member);
 
-    response.sendRedirect("loginForm.jsp");
+    response.sendRedirect("/mvc/member/loginForm.do");
 %>
