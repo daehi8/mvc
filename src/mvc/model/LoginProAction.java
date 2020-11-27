@@ -1,5 +1,7 @@
 package mvc.model;
 
+import java.io.UnsupportedEncodingException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -10,7 +12,7 @@ public class LoginProAction implements SuperAction {
 	
 	@Override
 	public String requestAction(HttpServletRequest request, HttpServletResponse response) {
-		
+				
 		String id = request.getParameter("id");
 		String passwd  = request.getParameter("passwd");
 		
@@ -24,8 +26,7 @@ public class LoginProAction implements SuperAction {
 			request.setAttribute("check", check);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
-		
+		}		
 	    
 		return "/WEB-INF/views/member/loginPro.jsp";
 	}

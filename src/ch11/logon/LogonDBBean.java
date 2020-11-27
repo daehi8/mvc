@@ -147,7 +147,7 @@
 		return member;
     }
     
-    public void updateMember(LogonDataBean member)
+    public void updateMember(LogonDataBean dto)
     throws Exception {
         Connection conn = null;
         PreparedStatement pstmt = null;
@@ -158,11 +158,11 @@
             pstmt = conn.prepareStatement(
               "update MEMBER set passwd=?,name=?,email=?,blog=? "+
               "where id=?");
-            pstmt.setString(1, member.getPasswd());
-            pstmt.setString(2, member.getName());
-            pstmt.setString(3, member.getEmail());
-            pstmt.setString(4, member.getBlog());
-            pstmt.setString(5, member.getId());
+            pstmt.setString(1, dto.getPasswd());
+            pstmt.setString(2, dto.getName());
+            pstmt.setString(3, dto.getEmail());
+            pstmt.setString(4, dto.getBlog());
+            pstmt.setString(5, dto.getId());
             
             pstmt.executeUpdate();
         } catch(Exception ex) {

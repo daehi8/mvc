@@ -29,6 +29,7 @@ public class InputProAction implements SuperAction{
 		dto.setBlog(request.getParameter("blog"));
 		
 		LogonDBBean dao = LogonDBBean.getInstance();
+		
 	    try {
 			dao.insertMember(dto);
 		} catch (Exception e) {

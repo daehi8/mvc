@@ -6,9 +6,7 @@
 <head><title>메인입니다..</title>
 <link href="/resource/style/style.css" rel="stylesheet" type="text/css">
 </head>
-<%
- try{
-   if(session.getAttribute("memId")==null){%>
+<c:if test="${sessionScope.memId == null}">
 <script language="javascript">
 <!--
 function focusIt()
@@ -58,19 +56,15 @@ function focusIt()
             <input type="submit" name="Submit" value="로그인">
             <input type="button"  value="회원가입" onclick="javascript:window.location='/mvc/member/inputForm.do'">
           </td></form></tr></table>
-          
-          
-          
-          
-          
-          
-     <%}else{%>
+</c:if>
+
+<c:if test="${sessionScope.memId != null}">
        <table width=500 cellpadding="0" cellspacing="0"  align="center" border="1" >
          <tr>
            <td width="300" bgcolor="${bodyback_c}" height="20">하하하</td>
 
            <td rowspan="3" bgcolor="${value_c}" align="center">
-             <%=session.getAttribute("memId")%>님이 <br>
+             ${sessionScope.memId}님이 <br>
              방문하셨습니다
              <form  method="post" action="/mvc/member/logout.do">  
              <input type="submit"  value="로그아웃">
@@ -83,8 +77,6 @@ function focusIt()
       </tr>
      </table>
      <br>
- <%}
- }catch(NullPointerException e){}
- %>
+</c:if>
  </body>
 </html>
