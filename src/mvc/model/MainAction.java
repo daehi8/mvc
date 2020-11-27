@@ -13,7 +13,7 @@ public class MainAction implements SuperAction {
 	@Override
 	public String requestAction(HttpServletRequest request, HttpServletResponse response) {
 		System.out.println("MainAction Start");
-		return "/member/main.jsp";
+		return "/WEB-INF/views/member/main.jsp";
 	}
 
 }

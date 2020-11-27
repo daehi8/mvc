@@ -8,6 +8,6 @@ public class LoginProAction implements SuperAction {
 	@Override
 	public String requestAction(HttpServletRequest request, HttpServletResponse response) {
 		System.out.println("ProAction Start");
-		return "/member/loginpro.jsp";
+		return "/WEB-INF/views/member/loginPro.jsp";
 	}
 }

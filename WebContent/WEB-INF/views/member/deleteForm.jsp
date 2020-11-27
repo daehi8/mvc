@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=euc-kr"%>
-<%@ include file="/view/color.jsp"%>
+<%@ include file="/resource/etc/color.jsp"%>
 <html>
 <head><title>È¸¿øÅ»Åð</title>
 <link href="style.css" rel="stylesheet" type="text/css">

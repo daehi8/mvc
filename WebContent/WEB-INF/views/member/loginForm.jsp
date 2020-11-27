@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=euc-kr"%>
-<%@ include file="/view/color.jsp"%>
+<%@ include file="/resource/etc/color.jsp"%>
 <html>
 <head><title>·Î±×ÀÎ</title>
 <link href="style.css" rel="stylesheet" type="text/css">
@@ -26,7 +26,7 @@
    </script>
 </head>
 <BODY onload="begin()" bgcolor="<%=bodyback_c%>">
-<form name="myform" action="loginPro.jsp" method="post" onSubmit="return checkIt()">
+<form name="myform" action="/mvc/member/loginPro.do" method="post" onSubmit="return checkIt()">
 <TABLE cellSpacing=1 cellPadding=1 width="260" border=1 align="center" >
   
   <TR height="30">

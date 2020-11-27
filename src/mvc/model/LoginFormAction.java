@@ -8,6 +8,6 @@ public class LoginFormAction implements SuperAction {
 	@Override
 	public String requestAction(HttpServletRequest request, HttpServletResponse response) {
 		System.out.println("LoginFormAction Start");
-		return "/member/loginform.jsp";
+		return "/WEB-INF/views/member/loginForm.jsp";
 	}
 }

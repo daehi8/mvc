@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=euc-kr" %>
 <%@ page import = "ch11.logon.*" %>
-<%@ include file="/view/color.jsp"%>
+<%@ include file="/resource/etc/color.jsp"%>
 
 <html>
 <head>

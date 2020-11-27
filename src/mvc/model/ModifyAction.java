@@ -8,7 +8,7 @@ public class ModifyAction implements SuperAction{
 	@Override
 	public String requestAction(HttpServletRequest request, HttpServletResponse response) {
 		
-		return "";
+		return "/WEB-INF/views/member/modify.jsp";
 	}
 
 }

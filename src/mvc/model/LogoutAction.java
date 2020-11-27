@@ -8,7 +8,7 @@ public class LogoutAction implements SuperAction{
 	@Override
 	public String requestAction(HttpServletRequest request, HttpServletResponse response) {
 		
-		return "";
+		return "/WEB-INF/views/member/logout.jsp";
 	}
 
 }
