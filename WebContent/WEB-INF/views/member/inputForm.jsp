@@ -44,7 +44,7 @@
             return;
         }
         // url과 사용자 입력 id를 조합합니다.
-        url = "confirmId.jsp?id="+userinput.id.value ;
+        url = "/mvc/member/confirmId.do?id="+userinput.id.value ;
         
         // 새로운 윈도우를 엽니다.
         open(url, "confirm",  "toolbar=no, location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=300, height=200");
